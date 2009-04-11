@@ -1,0 +1,60 @@
+<div class="operations_summary">
+	<div class="filters">
+		<%= render(:partial => "filters", :object => @filter_date) %>
+	</div>
+	<% for account in @accounts %> 
+		<br /><hr style="color:white"/><br />	
+		<h3><%= account.bank %></h3>
+		<div class="operations">
+			<table class="crud">
+				<tr>
+					<th class="name">Name</th>
+					<th class="date">Date</th>
+					<th class="value">Value</th>
+					<th class="action">Action</th>
+				</tr>	
+				<% for operation in account.operations.select {|o| o.created_at.between?(@filter_date.at_beginning_of_month, @filter_date.at_end_of_month)} %>
+				<tr class="<%= cycle("even", "odd") %>" >
+					<td>
+						<strong><%= operation.name %></strong>
+						<% for t in operation.tags %>
+						<a href="#" class="tag" style="color:white;background:<%= t.color %>" ><%= t.name %></a>
+						<% end %>
+					</td>
+					<td><%= operation.created_at.to_date %></td>
+					<td class="value <%= operation.value >= 0 ? "pos" : "neg" %>">$ <%= operation.value %></td>
+					<td>
+						<%= link_to 'Show', operation, :class => 'show' %>
+						<%= link_to 'Edit', edit_operation_path(operation), :class => 'edit' %>
+						<%= link_to 'Destroy', operation, :confirm => 'Are you sure?', :method => :delete, :class => 'destroy	' %>
+					</td>
+				</tr>
+				<% end %>
+				
+				<%
+					total =  0
+					account.operations.each {|o| total += o.value}
+				%>
+				
+				<tr class="total">
+					<td colspan="2">Total:</td>
+					<td class="value <%= total >= 0 ? "pos" : "neg" %>">$ <%= total %></td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+	
+			<!--div class="total">
+				<table class="crud">
+					<tr>
+						<th colspan="2">Summary</th>
+					</tr>
+					<tr>
+						<td class="label">Resources</td>
+						<td class="value <%= total >= 0 ? "pos" : "neg" %>">$<%= total %></td>
+					</tr>
+					
+				</table>
+			</div-->
+		</div>
+	<% end %>
+</div>

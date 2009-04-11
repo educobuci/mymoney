@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<title>My Money</title>
+	<%= javascript_include_tag 'jquery' %>
+	<%= javascript_include_tag 'events' %>
+	<%= stylesheet_link_tag 'global' %>
+</head>
+<body>
+	<div class="structure">
+		<div class="header">
+			<h1>My Money</h1>
+		</div>
+		<div class="menu">
+			<ul>
+				<li><%= link_to 'Summary', :controller => 'operations', :action => 'summary' %></li>
+				<li><%= link_to 'New Entry', :controller => 'operations', :action => 'new' %></li>
+				<li><%= link_to 'Transfer', :controller => 'accounts', :action => 'transfer' %></li>
+				<li><%= link_to 'Accounts', :controller => 'accounts', :action => 'index' %></li>
+			</ul>
+		</div>
+		<div class="flash"><%= flash[:notice] %></div>
+		<!--div class="tag_menu">
+			<h4>Tags</h4>
+			<ul>
+				<% for tag in Tag.find(:all) %>
+				<li><a href="#" class="tag" style="background:<%= tag.color %>"><%= tag.name %></a></li>
+				<% end %>
+			</ul>
+		</div-->
+		<div class="content">
+			<%= yield %>
+		</div>
+		<div class="footer">
+			© 2008 Copyright - Eduardo Cobuci
+		</div>
+	</div>
+</body>
+</html>

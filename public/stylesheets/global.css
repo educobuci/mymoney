@@ -1,0 +1,303 @@
+/**********************************************************
+/* General
+/**********************************************************/
+* {margin:0; padding:0 }
+body
+{
+	font-family: calibri, Verdana;
+	font-size:10pt;
+	background:#B5B5B5 url(../images/background.png) repeat-x;
+	padding-top:5px;
+}
+a
+{
+	color:black;
+	text-decoration:none;
+}
+a:hover
+{
+	text-decoration:underline;
+}
+.pos
+{
+	color:Green;
+}
+.neg
+{
+	color:Red;
+}
+div.structure
+{
+	width:1000px;
+	background:#FFF;
+	margin:auto;
+	border:solid 1px #AAAAAA;
+}
+h2
+{
+	font-size:12pt;
+	margin-bottom:15px;
+	padding-bottom:5px;
+	border-bottom:solid 2px #DFE8C8;
+	width:100%;
+	color:#446000;
+}
+/**********************************************************
+/* Header
+/**********************************************************/
+div.header
+{
+	color:White;
+	text-align:center;
+	padding:10px;
+}
+div.header h1
+{
+	background:url(../images/logo.png) no-repeat center;
+	text-indent:-10000px;
+	padding:8px 0;
+}
+
+/**********************************************************
+/* Menu
+/**********************************************************/
+div.menu
+{
+	border-bottom:solid 2px #DFE8C8;
+	text-align:center;
+}
+div.menu ul
+{
+	overflow:hidden;
+}
+div.menu ul li
+{
+	display:inline;
+}
+div.menu a
+{
+	border-left:solid 1px white;
+	background-color:#DFE8C8;
+	color:#446000;
+	padding:5px 8px;
+	line-height:22px;
+}
+div.menu a:hover
+{
+	background-color:#9CC700;
+	color:White;
+	text-decoration:none;
+}
+/**********************************************************
+/* Content
+/**********************************************************/
+div.content
+{
+	padding:20px;
+}
+div.content
+{
+	
+	min-height:450px;
+}
+
+/**********************************************************
+/* Tables
+/*********************************************************/
+table.crud
+{
+	border-collapse: collapse;
+	width:100%;
+	margin:10px 0;
+}
+table.crud th
+{
+	background-color:#9CC700;
+	text-align:left;
+	color:White;
+	border-bottom-width:2px !important;
+}
+table.crud td, table.crud th
+{
+	padding:3px 5px;
+	border:solid 1px white;
+}
+table.crud th.date
+{
+	width:80px;
+}
+table.crud td.value
+{
+	width:120px;
+	text-align:right;
+}
+table.crud th.action
+{
+	width:60px;
+}
+table.crud tr.even
+{
+	background-color:#DFE8C8;
+}
+table.crud tr.odd
+{
+	background-color:#F3F9E5;
+}
+a.edit, a.destroy, a.show
+{
+	text-indent:-100000px;
+	width:16px;
+	height:16px;
+	background:#9CC700;
+	display:block;
+	float:left;
+	margin-right:4px;
+}
+table.crud td a.edit
+{
+	background:url(../images/edit.gif) no-repeat;
+}
+table.crud td a.destroy
+{
+	background:url(../images/delete.png) no-repeat;
+}
+table.crud td a.show
+{
+	background:url(../images/show.gif) no-repeat;
+}
+
+/**********************************************************
+/* Button
+/*********************************************************/
+.button
+{
+	font-size:10pt !important;
+	background:#9CC700;
+	color:White;
+	padding:2px 5px;
+}
+input.button
+{
+	padding:2px 6px !important;
+}
+a:hover.button
+{
+	background:#6699CC;
+}
+a.addnew 
+{
+	float:right;
+	margin-top:-25px;
+}
+
+/**********************************************************
+/* Total
+/*********************************************************/
+tr.total td
+{
+	background-color:#DFE8C8;
+	padding:5px;
+}
+tr.total td.value
+{
+	font-weight:bold;
+}
+
+
+/**********************************************************
+/* Filter
+/*********************************************************/
+div.filters *
+{
+	font-size:11pt;
+}
+div.filters select
+{
+	border:solid 1px #4F81BD;
+	margin-right:20px;
+}
+/**********************************************************
+/* Form
+/*********************************************************/
+form dl.crud
+{
+	width:380px;
+}
+form dl.crud *
+{
+	font-size:10pt;
+}
+form dl.crud dt
+{
+	float:left;
+	width:120px;
+}
+form dl.crud dt, form dl.crud dd
+{
+	margin-bottom:5px;
+}
+form dl.crud input
+{
+	padding:3px 5px;
+}
+form dl.crud textarea
+{
+	height:150px;
+}
+form dl.crud .button
+{
+	float:right;
+	margin-left:10px;
+}
+/**********************************************************
+/* Footer
+/*********************************************************/
+div.footer
+{
+	border-top:#9CC700 solid 1px;
+	font-size:10px;
+	text-align:center;
+	padding-top:10px;
+	margin:10px;
+	color:#999999;
+	clear:both;
+}
+/**********************************************************
+/* Tags
+/*********************************************************/
+a.tag
+{
+	color:white;
+	background:#555;
+	padding:0 3px;
+}
+a.tag:hover
+{
+	text-decoration:none;
+}
+div.tag_menu
+{
+	width:160px;
+	float:left;
+	background:#EBEBEB;
+}
+div.tag_menu ul li
+{
+	list-style:none;
+}
+
+/**********************************************************
+/* Flash
+/*********************************************************/
+div.flash, div.errorExplanation
+{
+	width:350px;
+	height:100px;
+	background:#DFE8C8;
+	border:solid 1px #9CC700;
+	text-align:center;
+	left:50%;
+	margin-left:-175px;
+	position:absolute;
+	top:300px;
+}

@@ -1,0 +1,20 @@
+<div class="account_transfer">
+	<h2>New Transfer</h2>
+	<% form_for :origin, :url => { :action => :save_transfer } do |f|%>
+		<dl class="crud">
+
+			<dt>Origin:</dt>
+			<dd><%= select("origin", "account_id", Account.find(:all).collect {|a| [a.bank, a.id] } ) %></dd>
+
+			<dt>Destiny:</dt>
+			<% fields_for :destiny do |fileds|%>
+			<dd><%= select("destiny", "account_id", Account.find(:all).collect {|a| [a.bank, a.id] } ) %></dd>
+			<% end%>
+
+			<dt>Value:</dt>
+			<dd><%= f.text_field :value, :size => 10 %></dd>
+			<%= submit_tag("Send") %>
+
+		</dl>
+	<% end %>
+</div>

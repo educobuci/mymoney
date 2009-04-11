@@ -1,0 +1,9 @@
+<% form_tag :action => 'summary' do %>
+	<label for="date_month">Month</label>
+	<%= select_month(filters) %>
+
+	<label for="date_year">Year</label>
+	<%= select_year(filters) %>
+	
+	<%= submit_tag "Filter", :class => 'button' %>
+<% end %>

@@ -1,0 +1,34 @@
+<div class="operations">
+	<table class="crud">
+		<tr>
+			<th class="name">Name</th>
+			<th class="expires">Expires</th>
+			<th class="payment">Payment</th>
+			<th class="value">Value</th>
+			<th class="action">Action</th>
+		</tr>
+
+		<% for operation in account_summary.operations %>
+		
+		<% end %>
+
+	</table>
+
+	<% total = account_summary.operations.sum {|o| o.value } %>
+ 
+	<div class="total">
+		<table class="crud">
+			<tr>
+				<th colspan="2">Summary</th>
+			</tr>
+			<tr>
+				<td class="label">Total this month</td>
+				<td class="value <%= total >= 0 ? "pos" : "neg" %>">$<%= total %></td>
+			</tr>
+			<tr>
+				<td class="label">Resources</td>
+				<td class="value <%= total >= 0 ? "pos" : "neg" %>">$<%= account_summary.operations.count %></td>
+			</tr>
+		</table>
+	</div>
+</div>

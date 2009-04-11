@@ -1,0 +1,23 @@
+<p>
+  <b>Name:</b>
+  <%=h @operation.name %>
+</p>
+
+<p>
+  <b>Details:</b>
+  <%=h @operation.details %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%=h @operation.type %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%=h @operation.value %>
+</p>
+
+
+<%= link_to 'Edit', edit_operation_path(@operation) %> |
+<%= link_to 'Back', operations_path %>
