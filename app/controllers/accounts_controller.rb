@@ -16,7 +16,7 @@ class AccountsController < ApplicationController
 		@origin = Operation.new(params[:origin])
 		@destiny = Operation.new(params[:destiny])
 		
-		# Fill the operations valeu
+		# Fill the operation valeu
 		@destiny.value = @origin.value
 		@origin.value = @origin.value * (-1)
 		

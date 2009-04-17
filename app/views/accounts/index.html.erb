@@ -3,6 +3,7 @@
 
 	<table class="crud">
 		<tr>
+			<th>Alias</th>
 			<th>Agency</th>
 			<th>Bank</th>
 			<th>Number</th>
@@ -11,6 +12,7 @@
 
 	<% for account in @accounts %>
 		<tr class="<%= cycle("even", "odd") %>" >
+			<td><%=h account.alias %></td>
 			<td><%=h account.agency %></td>
 			<td><%=h account.bank %></td>
 			<td><%=h account.number %></td>

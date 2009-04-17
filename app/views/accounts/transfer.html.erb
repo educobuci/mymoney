@@ -4,11 +4,11 @@
 		<dl class="crud">
 
 			<dt>Origin:</dt>
-			<dd><%= select("origin", "account_id", Account.find(:all).collect {|a| [a.bank, a.id] } ) %></dd>
+			<dd><%= select("origin", "account_id", Account.find(:all).collect {|a| [a.alias, a.id] } ) %></dd>
 
 			<dt>Destiny:</dt>
 			<% fields_for :destiny do |fileds|%>
-			<dd><%= select("destiny", "account_id", Account.find(:all).collect {|a| [a.bank, a.id] } ) %></dd>
+			<dd><%= select("destiny", "account_id", Account.find(:all).collect {|a| [a.alias, a.id] } ) %></dd>
 			<% end%>
 
 			<dt>Value:</dt>

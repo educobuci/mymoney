@@ -198,11 +198,15 @@ tr.total td
 	background-color:#DFE8C8;
 	padding:5px;
 }
-tr.total td.value
+tr.total 
 {
 	font-weight:bold;
 }
-
+tr.balance
+{
+	color:white;
+	background:#4F81BD;
+}
 
 /**********************************************************
 /* Filter
@@ -292,12 +296,13 @@ div.tag_menu ul li
 div.flash, div.errorExplanation
 {
 	width:350px;
-	height:100px;
-	background:#DFE8C8;
-	border:solid 1px #9CC700;
+	background:#6C9700;
+	border:solid 3px #FFF;
 	text-align:center;
 	left:50%;
 	margin-left:-175px;
+	padding:20px;
 	position:absolute;
 	top:300px;
+	color:white;
 }

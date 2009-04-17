@@ -11,13 +11,11 @@ function popup(selector)
 		$(selector).hide();
 	
 		if($(selector).html().length)
-			$(selector).fadeIn(500);
-	
-		$(selector).click(
-			function()
+		{
+			$(selector).fadeIn(500, function()
 			{
-				$(selector).fadeOut(500);
-			}	
-		);
+				setTimeout("$('" + selector + "').fadeOut(500);", 2000);
+			});
+		}
 	}
 }

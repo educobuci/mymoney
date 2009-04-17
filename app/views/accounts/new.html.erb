@@ -3,6 +3,9 @@
 	<% form_for(@account) do |f| %>
 		<%= f.error_messages %>
 		<dl class="crud">
+			<dt><%= f.label :alias %></dt>
+			<dd><%= f.text_field :alias %></dd>
+			
 			<dt><%= f.label :agency %></dt>
 			<dd><%= f.text_field :agency %></dd>
 	

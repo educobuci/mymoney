@@ -11,13 +11,7 @@
 			<dd><%= f.text_field :value %></dd>
 		
 			<dt>Account</dt>
-			<dd><%= select("operation", "account_id", Account.find(:all).collect {|a| [a.bank, a.id] } ) %></dd>
-		
-			<!--dt><%= f.label :expiration_date %></dt>
-			<dd><%= f.text_field :expiration_date, :maxlength => 10  %></dd>
-		
-			<dt><%= f.label :pay_date %></dt>
-			<dd><%= f.text_field :pay_date, :maxlength => 10  %></dd-->
+			<dd><%= select("operation", "account_id", Account.find(:all).collect {|a| [a.alias, a.id] } ) %></dd>
 		
 			<dt><%= f.label :tags %></dt>
 			<dd><input name="tags" size="30" value="<%= @operation.tags ? @operation.tags.map{|t| t.name}.join(" ") : "" %>" /></dd>

@@ -2,9 +2,10 @@
 	<div class="filters">
 		<%= render(:partial => "filters", :object => @filter_date) %>
 	</div>
-	<% for account in @accounts %> 
+	<% for account in @accounts %>
+	<% previous_balance = account.previous_balance(@filter_date) %> 
 		<br /><hr style="color:white"/><br />	
-		<h3><%= account.bank %></h3>
+		<h3><%= account.alias %></h3>
 		<div class="operations">
 			<table class="crud">
 				<tr>
@@ -12,9 +13,15 @@
 					<th class="date">Date</th>
 					<th class="value">Value</th>
 					<th class="action">Action</th>
-				</tr>	
+				</tr>
+				<tr class="balance">
+					<td>Previous Balance</td>
+					<td><%= @filter_date.at_beginning_of_month %></td>
+					<td class="value" >$ <%= previous_balance %></td>
+					<td>&nbsp;</td>
+				</tr>
 				<% for operation in account.operations.select {|o| o.created_at.between?(@filter_date.at_beginning_of_month, @filter_date.at_end_of_month)} %>
-				<tr class="<%= cycle("even", "odd") %>" >
+				<tr class="<%= cycle("odd", "even") %>" >
 					<td>
 						<strong><%= operation.name %></strong>
 						<% for t in operation.tags %>
@@ -37,7 +44,7 @@
 				%>
 				
 				<tr class="total">
-					<td colspan="2">Total:</td>
+					<td colspan="2">Total</td>
 					<td class="value <%= total >= 0 ? "pos" : "neg" %>">$ <%= total %></td>
 					<td>&nbsp;</td>
 				</tr>
