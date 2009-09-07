@@ -1,4 +1,5 @@
 class Account < ActiveRecord::Base
+	belongs_to :user
 	has_many :operations
 	validates_presence_of :agency, :bank, :number
 	

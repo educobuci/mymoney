@@ -12,7 +12,7 @@ class OperationsController < ApplicationController
 		else
 			@filter_date = Date.today.at_beginning_of_month
 		end
-		@accounts = Account.find(:all)
+		@accounts = User.current.accounts
 	end
 
 	def show

@@ -8,7 +8,12 @@
 			<dd><%= f.text_field :name %></dd>
 
 			<dt><%= f.label :value %></dt>
-			<dd><%= f.text_field :value %></dd>
+			<dd>
+				<%= f.text_field :value %>
+			</dd>
+
+			<dt><%= f.label :pay_date %></dt>
+			<dd><%= text_field_tag ("operation[pay_date]",  @operation.pay_date ? @operation.pay_date.to_date.to_s : '', :id => 'operation_pay_date', :maxlength => 10, :size => 30) %></dd>
 		
 			<dt>Account</dt>
 			<dd><%= select("operation", "account_id", Account.find(:all).collect {|a| [a.alias, a.id] } ) %></dd>

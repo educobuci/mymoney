@@ -2,6 +2,7 @@ $(document).ready(function()
 	{
 		popup("div.flash");
 		popup("div.errorExplanation");
+		$('#operation_pay_date').datepicker();
 	}
 );
 function popup(selector)
@@ -10,7 +11,7 @@ function popup(selector)
 	{
 		$(selector).hide();
 	
-		if($(selector).html().length)
+		if($(selector).html() && $(selector).html().length)
 		{
 			$(selector).fadeIn(500, function()
 			{
