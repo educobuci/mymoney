@@ -1,11 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
 	
+	map.resources :operations
+	map.resources :tags
+	
 	# Transfers
 	map.connect 'accounts/transfer', :conditions => { :method => :get }, :controller => 'accounts', :action => 'transfer'
 	map.connect 'accounts/transfer', :conditions => { :method => :post }, :controller => 'accounts', :action => 'save_transfer'
-	
 	map.resources :accounts
-	map.resources :operations
 	
 	# Operations
 	map.root :controller => "operations", :action => 'summary'
