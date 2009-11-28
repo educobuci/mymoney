@@ -1,0 +1,20 @@
+<table class="crud">
+	<tr>
+		<% for c in obj[:columns] %>
+		<th class="<%= c[1] %>"><%= c[0] %></th>
+		<% end %>
+		<th class="action">Action</th>
+	</tr>
+	<% 	obj[:model].each do |m| %>
+	<tr class="<%= cycle("odd", "even") %>">
+		<% for c in obj[:columns] %>
+		<td class="<%= c[1] %>"><%= m.attributes[c[1].to_s] %></th>
+		<% end %>
+		<td>
+			<%= link_to 'Show', m, :class => 'show' %>
+			<%= link_to 'Edit', edit_tag_path(m), :class => 'edit' %>
+			<%= link_to 'Destroy', m, :confirm => 'Are you sure?', :method => :delete, :class => 'destroy	' %>
+		</td>
+	</tr>
+	<% end %>
+</table>

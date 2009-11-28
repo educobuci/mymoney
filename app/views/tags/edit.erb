@@ -1,0 +1,14 @@
+<div>
+	<% form_for(@tag) do |f| %>
+	<%= f.error_messages %>
+		<dl class="crud">
+			<dt><%= f.label :name %></dt>
+			<dd><%= f.text_field :name %></dd>
+			
+			<dt><%= f.label :color %></dt>
+			<dd><%= f.text_field :color %></dd>
+		</dl>
+		<%= f.submit "Create", :class => 'button', :value => 'Save' %>
+		<%= f.submit "Cancel", :class => 'button', :value => 'Cancel' %>
+	<% end %>
+</div>

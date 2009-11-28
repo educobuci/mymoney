@@ -1,0 +1,5 @@
+<div>
+	<%= render :partial => "layouts/grid", :locals => { :obj => { :columns => { 'Name' => :name, 'Color' => :color }, :model => @tags } } %>
+
+	<%= link_to 'New tag', new_tag_path %>
+</div>
