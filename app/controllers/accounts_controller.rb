@@ -1,5 +1,6 @@
 class AccountsController < ApplicationController
 	
+	# puts Account.find(:all)
 	def index
 		@accounts = Account.find(:all)
 	end
